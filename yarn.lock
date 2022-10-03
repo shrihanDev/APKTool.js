@@ -425,6 +425,18 @@ has-flag@^4.0.0:
   resolved "https://registry.yarnpkg.com/has-flag/-/has-flag-4.0.0.tgz#944771fd9c81c81265c4d6941860da06bb59479b"
   integrity sha512-EykJT/Q1KjTWctppgIAgfSO0tKVuZUjhgMr17kqTumMl6Afv3EISleU7qZUzoXDFTAHTDC4NOoG/ZxU3EvlMPQ==
 
+hjs-core@^1.0.0:
+  version "1.0.3"
+  resolved "https://registry.yarnpkg.com/hjs-core/-/hjs-core-1.0.3.tgz#c69e443d51676e78a0f36eebfdbff66e2c4c7cba"
+  integrity sha512-YTBrhCBBcAlBKM8PFlmTrMfFj28NR0ommE3z5K0edW0Lgv6uRfxXV9q78W1go0XUwAdzIKzsTWSrcHXAhRz0KA==
+
+hjs-xmlpull@^1.0.0:
+  version "1.0.0"
+  resolved "https://registry.yarnpkg.com/hjs-xmlpull/-/hjs-xmlpull-1.0.0.tgz#ce140ed5c422bfd211c1efd2d35092c4ebd21086"
+  integrity sha512-43rVEHTldMAhwbp6aMa3FkKylH241xNrYShuytcD2wHhjFa3pxLmihVP5SN0MP8vl8+bEnF3D5WQI1ZMlRI9kw==
+  dependencies:
+    hjs-core "^1.0.0"
+
 ignore@^5.2.0:
   version "5.2.0"
   resolved "https://registry.yarnpkg.com/ignore/-/ignore-5.2.0.tgz#6d3bac8fa7fe0d45d9f9be7bac2fc279577e345a"
