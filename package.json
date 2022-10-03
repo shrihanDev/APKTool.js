@@ -1,0 +1,10 @@
+{
+  "name": "apktool.js",
+  "version": "0.0.1",
+  "description": "APKTool, but for JavaScript",
+  "main": "index.js",
+  "repository": "git+https://github.com/shrihanDev/APKTool.js",
+  "author": "shrihanDev <shrihankp198725@gmail.com>",
+  "license": "Unlicense",
+  "private": true
+}
