@@ -7,6 +7,9 @@
   "author": "shrihanDev <shrihankp198725@gmail.com>",
   "license": "Unlicense",
   "private": true,
+  "scripts": {
+    "lint": "prettier --write . && eslint --fix ."
+  },
   "devDependencies": {
     "eslint": "^8.24.0",
     "prettier": "^2.7.1",
