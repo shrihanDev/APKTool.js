@@ -24,6 +24,7 @@
     "typescript": "*"
   },
   "dependencies": {
+    "hashcode": "^1.0.3",
     "hjs-xmlpull": "^1.0.0"
   }
 }
