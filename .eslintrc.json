@@ -14,7 +14,9 @@
     "no-eval": "off",
     "@typescript-eslint/no-useless-constructor": "off",
     "@typescript-eslint/no-non-null-assertion": "off",
-    "no-self-assign": "off"
+    "no-self-assign": "off",
+    "@typescript-eslint/semi": "off",
+    "@typescript-eslint/space-before-function-paren": "off"
   },
   "root": true
 }
