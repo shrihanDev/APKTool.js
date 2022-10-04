@@ -1,7 +1,7 @@
-import AndrolibException from 'brut/AndrolibException'
+import AndrolibException from 'brut/AndrolibException';
 
 export default class InFileNotFoundException extends AndrolibException {
-  constructor (message?: string) {
-    super('InFileNotFoundException', message)
+  constructor(message: string) {
+    super(message);
   }
 }

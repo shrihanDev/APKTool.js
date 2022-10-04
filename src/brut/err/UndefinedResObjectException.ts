@@ -1,7 +1,7 @@
-import AndrolibException from 'brut/AndrolibException'
+import AndrolibException from 'brut/AndrolibException';
 
 export default class UndefinedResObjectException extends AndrolibException {
-  constructor (message?: string) {
-    super('UndefinedResObjectException', message)
+  constructor(message: string) {
+    super(message);
   }
 }
