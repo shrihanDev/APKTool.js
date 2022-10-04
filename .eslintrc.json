@@ -1,15 +1,20 @@
 {
-    "env": {
-        "browser": true,
-        "es2021": true
-    },
-    "extends": "standard-with-typescript",
-    "parserOptions": {
-        "ecmaVersion": "latest",
-        "sourceType": "module",
-        "project": "./tsconfig.json"
-    },
-    "rules": {
-    },
-    "root": true
+  "env": {
+    "browser": true,
+    "es2021": true
+  },
+  "extends": "standard-with-typescript",
+  "parserOptions": {
+    "ecmaVersion": "latest",
+    "sourceType": "module",
+    "project": "./tsconfig.json"
+  },
+  "rules": {
+    "@typescript-eslint/no-extraneous-class": "off",
+    "no-eval": "off",
+    "@typescript-eslint/no-useless-constructor": "off",
+    "@typescript-eslint/no-non-null-assertion": "off",
+    "no-self-assign": "off"
+  },
+  "root": true
 }

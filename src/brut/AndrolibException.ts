@@ -1,7 +1,13 @@
-import BrutException from 'common/BrutException';
+import BrutException from 'common/BrutException'
 
 export default class AndrolibException extends BrutException {
-  constructor(prefix: string, message?: string) {
-    super(`${prefix}${message ? `:${message}` : ''}`);
+  constructor (prefix: string, message?: string) {
+    super(
+      `${prefix}${
+        message !== null && message !== undefined && message !== ''
+          ? `:${message}`
+          : ''
+      }`
+    )
   }
 }

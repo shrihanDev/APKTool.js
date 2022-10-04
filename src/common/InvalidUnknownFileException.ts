@@ -1,7 +1,7 @@
-import BrutException from 'common/BrutException';
+import BrutException from 'common/BrutException'
 
 export default class InvalidUnknownFileException extends BrutException {
-  constructor(message: string) {
-    super(message);
+  constructor (message: string) {
+    super(message)
   }
 }
