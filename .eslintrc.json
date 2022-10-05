@@ -16,7 +16,8 @@
     "@typescript-eslint/no-non-null-assertion": "off",
     "no-self-assign": "off",
     "@typescript-eslint/semi": "off",
-    "@typescript-eslint/space-before-function-paren": "off"
+    "@typescript-eslint/space-before-function-paren": "off",
+    "@typescript-eslint/member-delimiter-style": "off"
   },
   "root": true
 }
