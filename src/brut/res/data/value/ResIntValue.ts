@@ -6,8 +6,8 @@ export default class ResIntValue extends ResScalarValue {
   protected mValue: Int;
   private readonly type: Int;
 
-  constructor(value: Int, rawValue: string, thisType?: Int) {
-    super('integer', value, rawValue);
+  constructor(value: Int, rawValue: string, type?: string, thisType?: Int) {
+    super(type ?? 'integer', value, rawValue);
     if (thisType !== undefined) {
       this.type = thisType;
     }

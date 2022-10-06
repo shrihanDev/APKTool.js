@@ -63,7 +63,7 @@ export default class ResValueFactory {
       return new ResColorValue(value, rawValue);
     }
     if (type >= TypedValue.TYPE_FIRST_INT && type <= TypedValue.TYPE_LAST_INT) {
-      return new ResIntValue(value, rawValue, type);
+      return new ResIntValue(value, rawValue, undefined, type);
     }
 
     throw new AndrolibException(`Invalid value type: ${type}`);
@@ -118,7 +118,7 @@ export default class ResValueFactory {
     }
 
     if (ResTypeSpec.RES_TYPE_NAME_ATTR === resTypeName) {
-      return new ResAttr(parentVal, 0, '', '', '');
+      return new ResAttr(parentVal, toInt(0), null, null, null);
     }
 
     if (resTypeName.startsWith(ResTypeSpec.RES_TYPE_NAME_STYLES)) {

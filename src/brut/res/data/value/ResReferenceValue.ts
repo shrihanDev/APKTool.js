@@ -20,7 +20,7 @@ export default class ResReferenceValue extends ResIntValue {
     this.mTheme = theme;
   }
 
-  protected override encodeAsResXml(): string {
+  public override encodeAsResXml(): string {
     if (this.isNull()) {
       return '@null';
     }

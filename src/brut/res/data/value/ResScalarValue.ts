@@ -86,7 +86,7 @@ export default abstract class ResScalarValue
     }
     serializer.attribute(null, 'name', res.getResSpec().getName());
 
-    if (!body.isEmpty()) {
+    if (body !== '') {
       serializer.ignorableWhitespace(body);
     }
 
