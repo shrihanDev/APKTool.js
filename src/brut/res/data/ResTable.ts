@@ -38,11 +38,11 @@ export default class ResTable {
       const pkgId: Int = toInt(this.mPackageId === 0 ? 2 : this.mPackageId);
       resID = toInt((0xff000000 & (pkgId << 24)) | resID);
     }
-    return this.getResSpec(new ResID(resID));
+    return this.getResSpecFromResID(new ResID(resID));
   }
 
   public getResSpecFromResID(resID: ResID): ResResSpec {
-    return this.getPackage(resID.package_).getResSpec(resID);
+    return this.getPackageById(resID.package_).getResSpec(resID);
   }
 
   public listMainPackages(): Set<ResPackage> {
@@ -53,10 +53,10 @@ export default class ResTable {
     return this.mFramePackages;
   }
 
-  public getPackageById(id: Int) {
-    const pkg: ResPackage = this.mPackagesById.get(id);
+  public getPackageById(id: Int): ResPackage {
+    const pkg: ResPackage | undefined = this.mPackagesById.get(id);
     if (pkg !== null || pkg !== undefined) {
-      return pkg;
+      return pkg as ResPackage;
     }
     if (this.mAndRes !== null || this.mAndRes !== undefined) {
       return this.mAndRes.loadFrameworkPkg(
@@ -82,14 +82,14 @@ export default class ResTable {
       }
     }
     // if id is still 0, we only have one pkgId which is "android" -> 1
-    return id === 0 ? this.getPackage(toInt(1)) : this.getPackage(id);
+    return id === 0 ? this.getPackageById(toInt(1)) : this.getPackageById(id);
   }
 
   public getCurrentResPackage(): ResPackage {
-    const pkg: ResPackage = this.mPackagesById.get(this.mPackageId);
+    const pkg: ResPackage | undefined = this.mPackagesById.get(this.mPackageId);
 
     if (pkg !== null || pkg !== undefined) {
-      return pkg;
+      return pkg as ResPackage;
     } else {
       if (this.mMainPackages.size === 1) {
         return this.mMainPackages.values().next().value;

@@ -34,7 +34,7 @@ export default class ResResource {
     return this.mValue;
   }
 
-  public replace(value: ResValue) {
+  public replace(value: ResValue): void {
     const res: ResResource = new ResResource(
       this.mConfig,
       this.mResSpec,

@@ -18,9 +18,9 @@ export default class ResResSpec {
     this.mId = id;
     let cleanName: string = '';
 
-    const resResSpec: ResResSpec = type.getResSpecUnsafe(name);
-    if (resResSpec !== null) {
-      cleanName = `APKTOOL_DUPLICATE_${type}_${id.toString()}`;
+    const resResSpec: ResResSpec | undefined = type.getResSpecUnsafe(name);
+    if (resResSpec !== null || resResSpec !== undefined) {
+      cleanName = `APKTOOL_DUPLICATE_${type.toString()}_${id.toString()}`;
     } else {
       cleanName = name === '' ? `APKTOOL_DUMMYVAL_${id.toString()}` : name;
     }
@@ -38,11 +38,11 @@ export default class ResResSpec {
     return this.getResource(config.getFlags());
   }
 
-  public getResource(config: ResConfigFlags) {
-    const res: ResResource = this.mResources.get(config);
-    if (res == null) {
+  public getResource(config: ResConfigFlags): ResResource {
+    const res: ResResource | undefined = this.mResources.get(config);
+    if (res === null || res === undefined) {
       throw new UndefinedResObjectException(
-        `resource: spec=${this}, config=${config}`
+        `resource: spec=${this.toString()}, config=${config.toString()}`
       );
     }
     return res;
@@ -68,7 +68,7 @@ export default class ResResSpec {
 
   public getFullName(excludePackage: boolean, excludeType: boolean): string {
     return (
-      (excludePackage ? '' : getPackage().getName() + ':').toString() +
+      (excludePackage ? '' : this.getPackage().getName() + ':').toString() +
       (excludeType ? '' : this.getType().getName() + '/').toString() +
       this.getName()
     );
@@ -94,7 +94,7 @@ export default class ResResSpec {
     return this.getName().startsWith('APKTOOL_DUMMY_');
   }
 
-  public addResource(res: ResResource, overwrite?: boolean = false): void {
+  public addResource(res: ResResource, overwrite: boolean = false): void {
     const flags: ResConfigFlags = res.getConfig().getFlags();
     if (overwrite) {
       this.mResources.set(flags, res);

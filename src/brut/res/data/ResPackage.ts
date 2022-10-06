@@ -1,5 +1,6 @@
 import AndrolibException from 'brut/AndrolibException';
 import UndefinedResObjectException from 'brut/err/UndefinedResObjectException';
+import { value } from 'hashcode';
 import { Int, toInt } from 'strict-types/Int';
 import ResConfigFlags from './ResConfigFlags';
 import ResID from './ResID';
@@ -52,7 +53,7 @@ export default class ResPackage {
   }
 
   public getOrCreateConfig(flags: ResConfigFlags): ResType {
-    let config: ResType = this.mConfigs.get(flags);
+    let config: ResType | undefined = this.mConfigs.get(flags);
     if (config === null || config === undefined) {
       config = new ResType(flags);
       this.mConfigs.set(flags, config);
@@ -61,7 +62,7 @@ export default class ResPackage {
   }
 
   public getType(typeName: string): ResTypeSpec {
-    const type: ResTypeSpec = this.mTypes.get(typeName);
+    const type: ResTypeSpec | undefined = this.mTypes.get(typeName);
     if (type === null || type === undefined) {
       throw new UndefinedResObjectException(`type: ${typeName}`);
     }
@@ -81,7 +82,7 @@ export default class ResPackage {
   }
 
   public listValuesFile(): ResValuesFile[] {
-    // pass through
+    // PORT_TODO: Implement this
   }
 
   public getResTable(): ResTable {
@@ -146,7 +147,7 @@ export default class ResPackage {
     hash = toInt(
       31 * hash +
         (this.mResTable !== null || this.mResTable !== undefined
-          ? this.mResTable.hashCode()
+          ? value(this.mResTable)
           : 0)
     );
     hash = toInt(31 * hash + this.mId);
