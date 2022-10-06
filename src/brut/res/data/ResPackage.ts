@@ -2,6 +2,8 @@ import AndrolibException from 'brut/AndrolibException';
 import UndefinedResObjectException from 'brut/err/UndefinedResObjectException';
 import { value } from 'hashcode';
 import { Int, toInt } from 'strict-types/Int';
+import Duo from 'util/Duo';
+import ResValuesXmlSerializable from '../xml/ResValuesXmlSerializable';
 import ResConfigFlags from './ResConfigFlags';
 import ResID from './ResID';
 import ResResource from './ResResource';
@@ -82,7 +84,23 @@ export default class ResPackage {
   }
 
   public listValuesFile(): ResValuesFile[] {
-    // PORT_TODO: Implement this
+    const ret: Map<Duo<ResTypeSpec, ResType>, ResValuesFile> = new Map();
+    for (const spec of this.mResSpecs.values()) {
+      for (const res of spec.listResources()) {
+        if (isInstanceOfResValuesXmlSerializable(res.getValue())) {
+          const type: ResTypeSpec = res.getResSpec().getType();
+          const config: ResType = res.getConfig();
+          const key: Duo<ResTypeSpec, ResType> = new Duo(type, config);
+          let values: ResValuesFile | undefined = ret.get(key);
+          if (values === undefined || values === null) {
+            values = new ResValuesFile(this, type, config);
+            ret.set(key, values);
+          }
+          values.addResource(res);
+        }
+      }
+    }
+    return Array.from(ret.values());
   }
 
   public getResTable(): ResTable {
@@ -160,4 +178,10 @@ export default class ResPackage {
     }
     return this.mValueFactory;
   }
+}
+
+function isInstanceOfResValuesXmlSerializable(
+  object: any
+): object is ResValuesXmlSerializable {
+  return 'serializeToResValuesXml' in object;
 }
