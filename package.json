@@ -33,7 +33,10 @@
     "crc-32": "^1.2.2",
     "hashcode": "^1.0.3",
     "hjs-xmlpull": "^1.0.0",
+    "iconv-lite": "^0.6.3",
+    "iterable-has-next": "^0.0.4",
     "libxmljs2": "^0.30.1",
+    "smart-buffer": "^4.2.0",
     "tmp": "^0.2.1",
     "unzipper": "^0.10.11"
   }
