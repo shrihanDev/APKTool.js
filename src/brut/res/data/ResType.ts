@@ -26,7 +26,7 @@ export default class ResType {
     return this.mFlags;
   }
 
-  public addResource(res: ResResource, overwrite: boolean): void {
+  public addResource(res: ResResource, overwrite: boolean = false): void {
     const spec: ResResSpec = res.getResSpec();
     if (this.mResources.has(spec) && !overwrite) {
       throw new AndrolibException(

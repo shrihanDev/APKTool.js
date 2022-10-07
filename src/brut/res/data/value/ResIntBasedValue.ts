@@ -12,4 +12,8 @@ export default class ResIntBasedValue extends ResValue {
   public getRawIntValue(): Int {
     return this.mRawIntValue;
   }
+
+  public toString(): string {
+    return this.mRawIntValue.toString();
+  }
 }
