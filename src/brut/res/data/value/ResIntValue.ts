@@ -1,5 +1,5 @@
 import TypedValue from 'android/util/TypedValue';
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResScalarValue from './ResScalarValue';
 
 export default class ResIntValue extends ResScalarValue {

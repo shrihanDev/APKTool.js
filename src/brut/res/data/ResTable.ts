@@ -2,7 +2,7 @@ import AndrolibException from 'brut/AndrolibException';
 import UndefinedResObjectException from 'brut/err/UndefinedResObjectException';
 import VersionInfo from 'brut/meta/VersionInfo';
 import AndrolibResources from 'brut/res/AndrolibResources';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import ResID from './ResID';
 import ResPackage from './ResPackage';
 import ResResSpec from './ResResSpec';

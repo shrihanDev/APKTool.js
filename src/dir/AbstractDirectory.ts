@@ -1,6 +1,6 @@
 import { PathLike } from 'fs';
 import { Readable, Writable } from 'stream';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Directory from './Directory';
 import DirUtil from './DirUtil';
 import PathAlreadyExists from './PathAlreadyExist';

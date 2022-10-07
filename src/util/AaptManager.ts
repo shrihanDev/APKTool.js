@@ -1,7 +1,7 @@
 import { resolve } from 'canonical-path';
 import BrutException from 'common/BrutException';
 import { accessSync, chmodSync, constants, lstatSync, PathLike } from 'fs';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Jar from './Jar';
 import OS from './OS';
 import OSDetection from './OSDetection';

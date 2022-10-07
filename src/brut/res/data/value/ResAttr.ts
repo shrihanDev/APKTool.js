@@ -1,7 +1,7 @@
 import AndrolibException from 'brut/AndrolibException';
 import ResValuesXmlSerializable from 'brut/res/xml/ResValuesXmlSerializable';
 import { XmlSerializer } from 'hjs-xmlpull';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 import ResPackage from '../ResPackage';
 import ResResource from '../ResResource';

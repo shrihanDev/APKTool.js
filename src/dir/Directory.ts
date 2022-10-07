@@ -1,6 +1,6 @@
 import { PathLike } from 'fs';
 import { Readable, Writable } from 'stream';
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 
 export default interface Directory {
   getFiles: () => Set<string>;

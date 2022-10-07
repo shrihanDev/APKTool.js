@@ -1,4 +1,4 @@
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 
 export default class ResXmlEncoders {

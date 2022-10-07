@@ -1,5 +1,5 @@
 import { XmlSerializer } from 'hjs-xmlpull';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 import ResResource from '../ResResource';
 import ResAttr from './ResAttr';

@@ -1,5 +1,5 @@
 import UndefinedResObjectException from 'brut/err/UndefinedResObjectException';
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResPackage from '../ResPackage';
 import ResResSpec from '../ResResSpec';
 import ResIdValue from './ResIdValue';

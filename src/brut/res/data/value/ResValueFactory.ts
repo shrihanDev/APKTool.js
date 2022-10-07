@@ -1,7 +1,7 @@
 import TypedValue from 'android/util/TypedValue';
 import AndrolibException from 'brut/AndrolibException';
-import { toFloat } from 'strict-types/Float';
-import { Int, toInt } from 'strict-types/Int';
+import { toFloat } from 'types/Float';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 import ResPackage from '../ResPackage';
 import ResTypeSpec from '../ResTypeSpec';

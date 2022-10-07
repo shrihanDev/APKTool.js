@@ -2,7 +2,7 @@ import ResValuesXmlSerializable from 'brut/res/xml/ResValuesXmlSerializable';
 import ResXmlEncodable from 'brut/res/xml/ResXmlEncodable';
 import ResXmlEncoders from 'brut/res/xml/ResXmlEncoders';
 import { XmlSerializer } from 'hjs-xmlpull';
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResResource from '../ResResource';
 import ResIntBasedValue from './ResIntBasedValue';
 

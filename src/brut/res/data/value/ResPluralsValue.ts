@@ -1,7 +1,7 @@
 import ResValuesXmlSerializable from 'brut/res/xml/ResValuesXmlSerializable';
 import ResXmlEncoders from 'brut/res/xml/ResXmlEncoders';
 import { XmlSerializer } from 'hjs-xmlpull';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 import ResResource from '../ResResource';
 import ResBagValue from './ResBagValue';

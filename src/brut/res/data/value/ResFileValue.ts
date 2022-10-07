@@ -1,5 +1,5 @@
 import AndrolibException from 'brut/AndrolibException';
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResIntBasedValue from './ResIntBasedValue';
 
 export default class ResFileValue extends ResIntBasedValue {

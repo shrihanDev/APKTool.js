@@ -13,7 +13,7 @@ import {
 } from 'fs';
 import { isAbsolute, sep } from 'path';
 import { Readable, Writable } from 'stream';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import { ParseOne } from 'unzipper';
 
 export default class BrutIO {

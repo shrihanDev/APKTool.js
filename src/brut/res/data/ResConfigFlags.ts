@@ -1,5 +1,5 @@
 import { value as getHashCode } from 'hashcode';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 
 export default class ResConfigFlags {
   public mcc: Int;

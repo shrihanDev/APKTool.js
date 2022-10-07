@@ -1,9 +1,9 @@
-import { Int, isInt, toInt } from 'strict-types/Int';
+import { Int, isInt, toInt } from 'types/Int';
 
 export interface PTE {
-  package_: Int
-  type: Int
-  entry: Int
+  package_: Int;
+  type: Int;
+  entry: Int;
 }
 
 export default class ResID {

@@ -1,7 +1,7 @@
 import AndrolibException from 'brut/AndrolibException';
 import UndefinedResObjectException from 'brut/err/UndefinedResObjectException';
 import { value } from 'hashcode';
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 import Duo from 'util/Duo';
 import ResValuesXmlSerializable from '../xml/ResValuesXmlSerializable';
 import ResConfigFlags from './ResConfigFlags';

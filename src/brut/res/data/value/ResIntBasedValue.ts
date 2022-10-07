@@ -1,4 +1,4 @@
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResValue from './ResValue';
 
 export default class ResIntBasedValue extends ResValue {

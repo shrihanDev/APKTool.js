@@ -1,4 +1,4 @@
-import { Int, toInt } from 'strict-types/Int';
+import { Int, toInt } from 'types/Int';
 
 export default class BuildOptions {
   public forceBuildAll: boolean = false;

@@ -1,4 +1,4 @@
-import { Int } from 'strict-types/Int';
+import { Int } from 'types/Int';
 import ResIntValue from './ResIntValue';
 
 export default class ResColorValue extends ResIntValue {

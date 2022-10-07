@@ -1,6 +1,6 @@
 import { value } from 'hashcode';
-import { Float } from 'strict-types/Float';
-import { Int } from 'strict-types/Int';
+import { Float } from 'types/Float';
+import { Int } from 'types/Int';
 import ResScalarValue from './ResScalarValue';
 
 export default class ResFloatValue extends ResScalarValue {
