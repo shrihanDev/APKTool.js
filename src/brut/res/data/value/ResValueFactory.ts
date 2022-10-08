@@ -30,46 +30,50 @@ export default class ResValueFactory {
     this.mPackage = package_;
   }
 
-  public factory(type: Int, value: Int, rawValue: string): ResScalarValue {
+  public factory(
+    type: Int,
+    value: Int,
+    rawValue: string | null
+  ): ResScalarValue {
     switch (type) {
       case TypedValue.TYPE_NULL:
         if (value === TypedValue.DATA_NULL_UNDEFINED) {
           // Special case $empty as explicitly defined empty value
           return new ResStringValue('', value);
         } else if (value === TypedValue.DATA_NULL_EMPTY) {
-          return new ResEmptyValue(value, rawValue, type);
+          return new ResEmptyValue(value, rawValue!, type);
         }
         return new ResReferenceValue(this.mPackage, toInt(0), '');
       case TypedValue.TYPE_REFERENCE:
         return this.newReference(value, '');
       case TypedValue.TYPE_ATTRIBUTE:
       case TypedValue.TYPE_DYNAMIC_ATTRIBUTE:
-        return this.newReference(value, rawValue, true);
+        return this.newReference(value, rawValue!, true);
       case TypedValue.TYPE_STRING:
-        return new ResStringValue(rawValue, value);
+        return new ResStringValue(rawValue!, value);
       case TypedValue.TYPE_FLOAT:
-        return new ResFloatValue(toFloat(value), value, rawValue);
+        return new ResFloatValue(toFloat(value), value, rawValue!);
       case TypedValue.TYPE_DIMENSION:
-        return new ResDimenValue(value, rawValue);
+        return new ResDimenValue(value, rawValue!);
       case TypedValue.TYPE_FRACTION:
-        return new ResFractionValue(value, rawValue);
+        return new ResFractionValue(value, rawValue!);
       case TypedValue.TYPE_INT_BOOLEAN:
-        return new ResBoolValue(value === 0, value, rawValue);
+        return new ResBoolValue(value === 0, value, rawValue!);
       case TypedValue.TYPE_DYNAMIC_REFERENCE:
-        return this.newReference(value, rawValue);
+        return this.newReference(value, rawValue!);
     }
 
     if (type >= TypedValue.TYPE_FIRST_COLOR_INT) {
-      return new ResColorValue(value, rawValue);
+      return new ResColorValue(value, rawValue!);
     }
     if (type >= TypedValue.TYPE_FIRST_INT && type <= TypedValue.TYPE_LAST_INT) {
-      return new ResIntValue(value, rawValue, undefined, type);
+      return new ResIntValue(value, rawValue!, undefined, type);
     }
 
     throw new AndrolibException(`Invalid value type: ${type}`);
   }
 
-  public factoryStr(value: string, rawValue: Int): ResIntBasedValue {
+  public factoryStr(value: string | null, rawValue: Int): ResIntBasedValue {
     if (value === null) {
       return new ResFileValue('', rawValue);
     }

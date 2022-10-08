@@ -99,7 +99,7 @@ export default class ResConfigFlags {
     colorMode: Int,
     isInvalid: boolean,
     size: Int
-  ): void {
+  ): ResConfigFlags {
     if (orientation < 0 || orientation > 3) {
       console.warn(`Invalid orientation value ${orientation}`);
       orientation = toInt(0);
@@ -167,6 +167,8 @@ export default class ResConfigFlags {
     this.isInvalid = isInvalid;
     this.size = size;
     this.mQualifiers = this.generateQualifiers();
+
+    return this;
   }
 
   public getQualifiers(): string {
