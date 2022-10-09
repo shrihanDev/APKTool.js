@@ -6,30 +6,40 @@ export default interface AttributeSet {
   getAttributeName: (index: Int) => string;
   getPositionDescription: () => string;
   getAttributeNameResource: (index: Int) => Int;
-  getIdAttribute: () => string;
-  getClassAttribute: () => string;
-  getIdAttributeresourceValue: (index: Int) => Int;
+  getIdAttribute: () => string | null;
+  getClassAttribute: () => string | null;
+  getIdAttributeResourceValue: (index: Int) => Int;
   getStyleAttribute: () => Int;
-  getAttributeValue: (namespace: string, attribute: string) => string;
-  getAttributeListValue: ((
-    index: Int,
+  getAttributeValue: (namespace: string, attribute: string) => string | null;
+  getAttributeListValue: (
+    namespace: string,
+    attribute: string,
     options: string[],
     defaultValue: Int
-  ) => Int) &
-    ((
-      namespace: string,
-      attribute: string,
-      options: string[],
-      defaultValue: Int
-    ) => Int);
-  getAttributeBooleanValue: ((index: Int, defaultValue: Int) => boolean) &
-    ((namespace: string, attribute: string, defaultValue: Int) => boolean);
-  getAttributeResourceValue: ((index: Int, defaultValue: Int) => Int) &
-    ((namespace: string, attribute: string, defaultValue: string) => Int);
-  getAttributeIntValue: ((index: Int, defaultValue: Int) => Int) &
-    ((namespace: string, attribute: string, defaultValue: string) => Int);
-  getAttributeUnsignedIntValue: ((index: Int, defaultValue: Int) => Int) &
-    ((namespace: string, attribute: string, defaultValue: string) => Int);
-  getAttributeFloatValue: ((index: Int, defaultValue: Float) => Float) &
-    ((namespace: string, attribute: string, defaultValue: Float) => Float);
+  ) => Int;
+  getAttributeBooleanValue: (
+    namespace: string,
+    attribute: string,
+    defaultValue: boolean
+  ) => boolean;
+  getAttributeResourceValue: (
+    namespace: string,
+    attribute: string,
+    defaultValue: Int
+  ) => Int;
+  getAttributeIntValue: (
+    namespace: string,
+    attribute: string,
+    defaultValue: Int
+  ) => Int;
+  getAttributeUnsignedIntValue: (
+    namespace: string,
+    attribute: string,
+    defaultValue: Int
+  ) => Int;
+  getAttributeFloatValue: (
+    namespace: string,
+    attribute: string,
+    defaultValue: Float
+  ) => Float;
 }

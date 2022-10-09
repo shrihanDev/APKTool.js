@@ -23,11 +23,11 @@
     "eslint-plugin-import": "^2.25.2",
     "eslint-plugin-n": "^15.0.0",
     "eslint-plugin-promise": "^6.0.0",
-    "js-yaml": "^4.1.0",
     "prettier": "^2.7.1",
     "typescript": "*"
   },
   "dependencies": {
+    "js-yaml": "^4.1.0",
     "archiver": "^5.3.1",
     "canonical-path": "^1.0.0",
     "crc-32": "^1.2.2",
@@ -36,6 +36,7 @@
     "iconv-lite": "^0.6.3",
     "iterable-has-next": "^0.0.4",
     "libxmljs2": "^0.30.1",
+    "number-util": "git+https://github.com/mattdesl/number-util",
     "smart-buffer": "^4.2.0",
     "tmp": "^0.2.1",
     "unzipper": "^0.10.11"

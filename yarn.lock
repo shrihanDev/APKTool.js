@@ -1542,6 +1542,10 @@ npmlog@^5.0.1:
     gauge "^3.0.0"
     set-blocking "^2.0.0"
 
+"number-util@git+https://github.com/mattdesl/number-util":
+  version "1.0.3"
+  resolved "git+https://github.com/mattdesl/number-util#3879f2646f6383bc6d9291e5e5f5197c8eaa5262"
+
 object-assign@^4.1.1:
   version "4.1.1"
   resolved "https://registry.yarnpkg.com/object-assign/-/object-assign-4.1.1.tgz#2109adc7965887cfc05cbbd442cac8bfbb360863"
